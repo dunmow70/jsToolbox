@@ -5,7 +5,6 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
-import com.karateca.jstoolbox.MyAction;
 
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;

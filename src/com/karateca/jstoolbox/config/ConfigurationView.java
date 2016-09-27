@@ -12,12 +12,16 @@ public class ConfigurationView {
   private JPanel openInBrowserPanel;
   private JButton resetButton;
   private JTextField unitTestSuffix;
+  private JTextField testFolder;
+  private JTextField sourceFolder;
   private JTextField fileSuffix;
   private JTextField searchUrl;
   private JCheckBox useFilePath;
   private JTextField fromPath;
   private JPanel myPanel;
   private JTextField viewSuffix;
+  private JButton saveButton;
+  private JComboBox<String> templateNames;
 
   public ConfigurationView() {
     useFilePath.addActionListener(new ActionListener() {
@@ -31,6 +35,12 @@ public class ConfigurationView {
   public JPanel getMyPanel() {
     return myPanel;
   }
+
+  public void setTestFolder(String value) { testFolder.setText(value); }
+  public String getTestFolder() { return testFolder.getText(); }
+
+  public void setSourceFolder(String value) { sourceFolder.setText(value); }
+  public String getSourceFolder() { return sourceFolder.getText(); }
 
   public void setTestSuffix(String testSuffix) {
     unitTestSuffix.setText(testSuffix);
@@ -81,7 +91,27 @@ public class ConfigurationView {
     fromPath.setEnabled(selected);
   }
 
+  // We will attach listeners to the reset and save buttons in the JsToolboxConfigurable class.
   public JButton getResetButton() {
     return resetButton;
   }
+
+  public JButton getSaveButton() { return saveButton; }
+
+  public String getSelectedTemplateName() {
+    return templateNames.getModel().getSelectedItem().toString();
+  }
+
+  public void setSelectedTemplateName(String templateName) {
+    this.templateNames.getModel().setSelectedItem(templateName);
+  }
+
+  public void setTemplateNames(String[] templateNames) {
+    for (String templateName : templateNames) {
+      if (this.templateNames != null) {
+        this.templateNames.addItem(templateName);
+      }
+    }
+  }
+
 }

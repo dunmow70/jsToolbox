@@ -1,12 +1,12 @@
 <idea-plugin version="2">
-  <id>com.karateca.jstoolbox</id>
-  <name>JS Toolbox</name>
-  <version>1.9</version>
-  <vendor email="code@karateca.com" url="http://www.andresdominguez.com">
-    Andres Dominguez
-  </vendor>
+    <id>com.karateca.jstoolbox</id>
+    <name>JS Toolbox</name>
+    <version>1.9</version>
+    <vendor email="code@karateca.com" url="http://www.andresdominguez.com">
+        Andres Dominguez
+    </vendor>
 
-  <description><![CDATA[
+    <description><![CDATA[
     <h1>JS Toolbox </h1>
 
     <p>An Intellij / Webstorm plugin that provides several tools for javascript development.</p>
@@ -154,7 +154,7 @@
     <p>For example, select a bunch of arguments, choose sort, and enter a text (eg. ,) to split and sort the result.</p>
     ]]></description>
 
-  <change-notes><![CDATA[
+    <change-notes><![CDATA[
       <html>
       <ul>
         <li>1.9 - Implement toggle camel and dash case</li>
@@ -171,103 +171,121 @@
       </ul>
       </html>
       ]]>
-  </change-notes>
+    </change-notes>
 
-  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
-  <idea-version since-build="107.105"/>
+    <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="107.105"/>
 
-  <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.lang</depends>
 
-  <application-components>
-    <!-- Add your application components here -->
-  </application-components>
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
 
-  <project-components>
-    <!-- Add your project components here -->
-  </project-components>
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
 
-  <actions>
-    <!-- Add your actions here -->
-    <action id="com.karateca.jstoolbox.joiner.JoinerAction"
-            class="com.karateca.jstoolbox.joiner.JoinerAction" text="Join"
-            description="Joint a string or multiple variable declarations">
-      <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt J"/>
-      <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta J"/>
-    </action>
-    <action id="com.karateca.jstoolbox.toconstructor.GoToConstructorAction"
-            class="com.karateca.jstoolbox.toconstructor.GoToConstructorAction"
-            text="Go to constructor"
-            description="Go to the constructor">
-      <keyboard-shortcut keymap="$default" first-keystroke="alt G"/>
-      <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta G"/>
-    </action>
-    <action id="com.karateca.jstoolbox.torelated.GoToTestAction"
-            class="com.karateca.jstoolbox.torelated.GoToTestAction"
-            text="Go to test"
-            description="Go to the test file form the file of the view">
-      <keyboard-shortcut keymap="$default" first-keystroke="alt T"/>
-      <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta T"/>
-    </action>
-    <action id="com.karateca.jstoolbox.torelated.GoToViewAction"
-            class="com.karateca.jstoolbox.torelated.GoToViewAction"
-            text="Go to view"
-            description="Switch between the view and the controller">
-      <keyboard-shortcut keymap="$default" first-keystroke="alt V"/>
-      <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta V"/>
-    </action>
-    <action id="com.karateca.jstoolbox.tobrowser.ToBrowserAction"
-            class="com.karateca.jstoolbox.tobrowser.ToBrowserAction"
-            text="Open in browser"
-            description="Open the current file in browser">
-      <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt G"/>
-    </action>
-    <action id="com.karateca.jstoolbox.generatemethod.GenerateMethodAction"
-            class="com.karateca.jstoolbox.generatemethod.GenerateMethodAction"
-            text="Generate javascript method"
-            description="Generate a new method">
-      <add-to-group group-id="GenerateGroup" anchor="last"/>
-    </action>
-    <action id="com.karateca.jstoolbox.generatemethod.OverrideMethodAction"
-            class="com.karateca.jstoolbox.generatemethod.OverrideMethodAction"
-            text="Override javascript method"
-            description="Override a method from the parent">
-      <add-to-group group-id="GenerateGroup" anchor="last"/>
-    </action>
-    <action id="com.karateca.jstoolbox.sort.SortSelection"
-            class="com.karateca.jstoolbox.sort.SortSelection"
-            text="Sort selection"
-            description="Sort the currently selected items">
-      <keyboard-shortcut keymap="$default" first-keystroke="shift alt 1"/>
-      <keyboard-shortcut keymap="Mac OS X" first-keystroke="shift meta 1"/>
-      <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="shift meta 1"/>
-    </action>
-    <action id="toggleCamelDashCase"
-            class="com.karateca.jstoolbox.dashcamel.ToggleCamelDashCaseAction"
-            text="Toggle camel and dash case"
-            description="Turn selection into dash case if in camel case and vice versa"/>
+    <actions>
 
-    <!-- Add everything under tools -->
-    <group id="TestActionGroup"
-           text="JS Toolbox"
-           description="JS Toolbox"
-           popup="true">
-      <reference ref="com.karateca.jstoolbox.joiner.JoinerAction"/>
-      <reference ref="com.karateca.jstoolbox.toconstructor.GoToConstructorAction"/>
-      <reference ref="com.karateca.jstoolbox.torelated.GoToTestAction"/>
-      <reference ref="com.karateca.jstoolbox.torelated.GoToViewAction"/>
-      <reference ref="com.karateca.jstoolbox.tobrowser.ToBrowserAction"/>
-      <reference ref="com.karateca.jstoolbox.sort.SortSelection"/>
-      <reference ref="toggleCamelDashCase"/>
-      <reference ref="com.karateca.jstoolbox.generatemethod.GenerateMethodAction"/>
-      <reference ref="com.karateca.jstoolbox.generatemethod.OverrideMethodAction"/>
-      <add-to-group group-id="ToolsMenu" anchor="first"/>
-      <add-to-group group-id="EditorPopupMenu"/>
-    </group>
-  </actions>
+        <!-- Add your actions here -->
+        <action id="com.karateca.jstoolbox.joiner.JoinerAction"
+                class="com.karateca.jstoolbox.joiner.JoinerAction" text="Join"
+                description="Join a string or multiple variable declarations">
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt J"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta J"/>
+        </action>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
-    <applicationConfigurable
-        instance="com.karateca.jstoolbox.config.JsToolboxConfigurable"/>
-  </extensions>
+        <action id="com.karateca.jstoolbox.toconstructor.GoToConstructorAction"
+                class="com.karateca.jstoolbox.toconstructor.GoToConstructorAction"
+                text="Go to constructor"
+                description="Go to the constructor">
+            <keyboard-shortcut keymap="$default" first-keystroke="alt G"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta G"/>
+        </action>
+
+        <action id="com.karateca.jstoolbox.torelated.GoToTestAction"
+                class="com.karateca.jstoolbox.torelated.GoToTestAction"
+                text="Go to test"
+                description="Go to the test file form the file of the view">
+            <keyboard-shortcut keymap="$default" first-keystroke="alt T"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta T"/>
+        </action>
+
+        <action id="com.karateca.jstoolbox.torelated.GoToViewAction"
+                class="com.karateca.jstoolbox.torelated.GoToViewAction"
+                text="Go to view"
+                description="Switch between the view and the controller">
+            <keyboard-shortcut keymap="$default" first-keystroke="alt V"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta V"/>
+        </action>
+
+        <action id="com.karateca.jstoolbox.tobrowser.ToBrowserAction"
+                class="com.karateca.jstoolbox.tobrowser.ToBrowserAction"
+                text="Open in browser"
+                description="Open the current file in browser">
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt G"/>
+        </action>
+
+        <action id="com.karateca.jstoolbox.generatemethod.GenerateMethodAction"
+                class="com.karateca.jstoolbox.generatemethod.GenerateMethodAction"
+                text="Generate javascript method"
+                description="Generate a new method">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
+        <action id="com.karateca.jstoolbox.generatemethod.OverrideMethodAction"
+                class="com.karateca.jstoolbox.generatemethod.OverrideMethodAction"
+                text="Override javascript method"
+                description="Override a method from the parent">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
+        <action id="com.karateca.jstoolbox.sort.SortSelection"
+                class="com.karateca.jstoolbox.sort.SortSelection"
+                text="Sort selection"
+                description="Sort the currently selected items">
+            <keyboard-shortcut keymap="$default" first-keystroke="shift alt 1"/>
+            <keyboard-shortcut keymap="Mac OS X" first-keystroke="shift meta 1"/>
+            <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="shift meta 1"/>
+        </action>
+
+        <action id="toggleCamelDashCase"
+                class="com.karateca.jstoolbox.dashcamel.ToggleCamelDashCaseAction"
+                text="Toggle camel and dash case"
+                description="Turn selection into dash case if in camel case and vice versa"/>
+
+        <action id="com.karateca.jstoolbox.config.ConfigurationViewAction"
+                class="com.karateca.jstoolbox.config.ConfigurationViewAction"
+                text="Go to config"
+                description="Go to the config">
+            <keyboard-shortcut keymap="$default" first-keystroke="alt C"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta C"/>
+        </action>
+
+        <!-- Add everything under tools -->
+        <group id="TestActionGroup"
+               text="JS Toolbox"
+               description="JS Toolbox"
+               popup="true">
+            <reference ref="com.karateca.jstoolbox.joiner.JoinerAction"/>
+            <reference ref="com.karateca.jstoolbox.toconstructor.GoToConstructorAction"/>
+            <reference ref="com.karateca.jstoolbox.torelated.GoToTestAction"/>
+            <reference ref="com.karateca.jstoolbox.torelated.GoToViewAction"/>
+            <reference ref="com.karateca.jstoolbox.tobrowser.ToBrowserAction"/>
+            <reference ref="com.karateca.jstoolbox.sort.SortSelection"/>
+            <reference ref="toggleCamelDashCase"/>
+            <reference ref="com.karateca.jstoolbox.generatemethod.GenerateMethodAction"/>
+            <reference ref="com.karateca.jstoolbox.generatemethod.OverrideMethodAction"/>
+            <reference ref="com.karateca.jstoolbox.config.ConfigurationViewAction"/>
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <add-to-group group-id="EditorPopupMenu"/>
+        </group>
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <applicationConfigurable
+                instance="com.karateca.jstoolbox.config.JsToolboxConfigurable"/>
+    </extensions>
 </idea-plugin>
